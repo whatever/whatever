@@ -25,6 +25,9 @@
   #v(0.3em)
 ]
 
+#show heading.where(level: 3): it => [
+]
+
 #let job(company, title, date) = grid(
   columns: (40%, 1fr, 30%),
   column-gutter: 1em,
@@ -81,7 +84,7 @@
         stroke: none,
         inset: (x: 6pt, y: 3pt),
         [*GitHub:*],    [ #link("https://github.com/whatever/")[\@whatever] ],
-        [*LinkedIn:*],  [ #link("https://www.linkedin.com/in/whatevergg/")[\@whatevergg] ],
+        [*LinkedIn:*],  [ #link("https://www.linkedin.com/in/whatevergg/")[/in/whatevergg] ],
         [*Email:*],     [ #link("mailto:matt@worldshadowgovernment.com")[matt\@worldshadowgovernment.com] ]
       )
     ]
@@ -90,57 +93,66 @@
 
 == tl;dr:
 
+AI Hacker and Chaos Engineering Advocate, operating at immense scales with zero
+downtime. I have worked for 15 years as a Software Engineer and Software
+Engineering Manager, tackling problems in "Big Data" from the get-go. My teams
+and I have consistently solved complex problems, owned a ton of infrastructure,
+and celebrated the delivery of ambitious projects. Whatever my ikigai is, it
+braids Mathematics and Programming; _I'm loving this AI boom_.
+
 #grid(
   columns: (auto, 1fr),
   column-gutter: 1em,
-  rows: (auto, auto, auto, auto),
-  row-gutter: 0.5em,
-  [ *ML + AI* ], [ Geneative AI, LLM's, Pinecone, pgvector, OpenAI, LangGraph, LangSmith, Python ],
-  [ *Platform* ], [ Terraform, Kubernetes, Airflow, Kafka, Celery, AWS, GCP ],
+  row-gutter: 0.25em,
+  inset: (x: 0.0em, y: 0.3em),
+  [ *ML + AI* ], [ #tech[Generative AI], #tech[LLMs], #tech[Pinecone], #tech[pgvector], #tech[OpenAI], #tech[LangGraph], #tech[LangSmith], #tech[Fine-tuning], #tech[LoRA] ],
+  [ *Engineering + Platform* ], [ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[GCP], #tech[Go-lang], #tech[Python] ],
+  [ *Achievements* ], [
+    - #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving challenging technical problems
+    - #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
+    - #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1M+ records/second
+    - #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
+    - #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
+    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] to build red-team models for synthetic data generation
+  ]
 )
 
-- #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving challenging technical problems
-- #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
-- #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1M+ records/second
-- #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
-- #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
 
 == Work Experience
 
 === #job([Warmer <sec-warmer>], "Founding AI Engineer", "November 2024 - Present")
 
-Currently Pivoting! Building AI-powered relationship intelligence platform for Financial Advisors, transforming how they nurture client relationships through LLM-driven insights and automation.
+Building the future of Financial Advisory. In this role, I launched two AI
+products from zero to production: a financial advisor assistant and intelligent
+client-advisor matching system, optimizing Cost-per-Lead.
 
-//  TODO:
-// - Insight generation
-//   -
-// - Transcription:
-//   - Soft realtime ETL
-//   - Deployed infrastructure as code
-// - Brought hallucinations to zero
-// - Monitored LLM performance in realtime
-// - Prompt engieered
-// - Introduced multi-arm bandit testing
-// - Introduced POSTHOG for analytics and cohort analysis
 
-- Dropped hallucinations to zero using grounding and post-inference validation - #tech[LangGraph], #tech[Python]
-- Built 10+ tools for LLM agents using OpenAI function calling: schema validation with Pydantic, automatic retry logic, state management, and error handling - enabling agents to reliably execute complex multi-step workflows - #tech[LangGraph], #tech[OpenAI]
-- Developed evaluation pipeline with custom scoring functions for LLM's - #tech[LangSmith]
-- Curated golden set for a slew of tasks: sourcing, transcription, speaker identification, etc. - #tech[LangSmith]
-- Developed evaluation framework and quality metrics for prompt correctness, implementing automated testing suite that measures factual accuracy and response relevance - #tech[Python], #tech[Custom Eval Framework]
-- Researched quantitative measures of advisor-client relationship health - #tech[Math]
-- Architected and deployed agentic workflows for advisor-client interactions - #tech[LangGraph]
-- Built a RAG system using contexual retrieval and hybrid-search system to power searches, enabling advisors to surface historical context and relationship patterns across all client touchpoints - #tech[pgvector], #tech[OpenAI Embeddings], #tech[Python]
-- Designed, built, and maintained a simple soft real-time event processing pipeline - #tech[Celery], #tech[Amazon SQS]
-- Created LLM agents with advanced tool usage capabilities, enabling advisors to automate complex workflows through natural language - #tech[LangChain], #tech[Function Calling], #tech[Python]
-- Built conversational AI system for lead generation, converting unstructured conversations into qualified opportunities - #tech[OpenAI], #tech[Custom Prompts], #tech[State Management]
+- Zero-to-One: founded and scaled AI product from zero to first paying customer -
+  #tech[LangGraph], #tech[OpenAI], #tech[Python]
+- Built conversational, lead-gen agent, the foundation of the new business model -
+  #tech[LangGraph], #tech[LLM]
+- Achieved \~0% hallucinations through grounding and post-inference validation techniques -
+  #tech[LangGraph], #tech[Python]
+- Built comprehensive LLM testing infrastructure: evaluation pipeline, golden datasets, custom hallucination scoring - catching 99% of quality issues before production -
+  #tech[LangSmith]
+- Architected multi-agent system managing complete client lifecycle, processing 1000+ meetings per day -
+  #tech[LangGraph]
+- Introduced experiment-driven development culture with A/B testing and feature flags -
+  #tech[PostHog]
+- Built sub-12 second transcript analysis pipeline for real-time processing -
+  #tech[Celery], #tech[Amazon SQS]
+- Designed complete agent architecture including RAG, memory, and tool usage systems -
+  #tech[pgvector], #tech[LangGraph]
+- Implemented hybrid-search RAG system across 1,000,000+ client communications -
+  #tech[pgvector], #tech[OpenAI Embeddings]
+
 
 
 === #job([Freelance / Stealth Startups <sec-freelance>], "AI Engineer, Hacker", "September 2023 - November 2024")
 
-Currently freelancing, working on several projects with early-stage startups, building out AI products.
+Freelanced, worked on several projects with early-stage startups, building out AI products.
 
-*WorkMate Labs: Workmate is your AI teammate*
+==== WorkMate Labs: Workmate is your AI teammate
 - Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[Python]
 - Designed and deployed LLM Prompts for contextual, personal email drafting - #tech[ChatGPT], #tech[Gemini], #tech[LLM]
 - Designed Vector DB for context-aware search of similar sent emails - #tech[Pinecone], #tech[Google Vector Search]
@@ -148,26 +160,27 @@ Currently freelancing, working on several projects with early-stage startups, bu
 - Curated datasets for evaluation and fine-tuning - #tech[Python]
 - Architected and designed large scale fine-tuning workflows for email drafting - #tech[Python]
 
-*Stealth Startup: FoodTech, translating conversations into API calls*
-- Designed and built SMS-based chat interface to LLM's - #tech[AWS Bedrock], #tech[LangChain], #tech[Twilio], #tech[Python]
-- Designed and built interface from LLM conversations to downstream API's - #tech[AWS Bedrock], #tech[Python]
+==== Stealth Startup: FoodTech, translating conversations into API calls
+- Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
+- Designed and built question-answering workflows inspired by Graph-of-thoughts - #tech[OpenAI API], #tech[Python]
+- Designed and built SMS-based chat interface to LLMs - #tech[AWS Bedrock], #tech[LangChain], #tech[Twilio], #tech[Python]
+- Designed and built interface from LLM conversations to downstream APIs - #tech[AWS Bedrock], #tech[Python]
 - Automated MLOps for LLM-based projects - finetuning, testing, deployment, and performance evaluation
 - Designed and deployed IaC for all services - #tech[Terraform]
-- Designed and built question-answering workflows inspired by Graph-of-thoughts - #tech[OpenAI API], #tech[Python]
-- Fine-tuned Dolphin Mixtral to improve conversational style - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
 
-*Stealth Startup: Generative AI as a service*
+==== Stealth Startup: Generative AI as a service
 - Diagnosed and solved a mission-critical problem for scheduling flow of traffic to clients - #tech[Math]!
 - Designed and built API to develop, simulate, and actually orchestrate system traffic flows - #tech[Python]
-- Standardized ML Ops approach for use with Stable Diffusion and LLM's - #tech[Terraform]
+- Standardized ML Ops approach for use with Stable Diffusion and LLMs - #tech[Terraform]
 - Designed and built tooling to monitor, compare, and research LLM performance - #tech[Python], #tech[LLM], #tech[LLaMa]
 
 === #job([Owl.co], "Software Engineer", "January 2023 - September 2023")
 
 Returning to the startup world, I designed and built products, catering to the Insurance Industry, with a focus on integrating Machine Learning with Human tasks. Here my focus was on ML products instead of Data scale.
 
-- Led an interdisciplinary team building ML products, automating tasks performed by human investigators: scraping the web, classifying documents, designing ETL's - #tech[Clojure], #tech[PyTorch], #tech[Presto], #tech[Spark]
+- Led an interdisciplinary team building ML products, automating tasks performed by human investigators: scraping the web, classifying documents, designing ETLs - #tech[Clojure], #tech[PyTorch], #tech[Presto], #tech[Spark]
 - Architected systems to integrate ML inference with human-driven tasks - #tech[Clojure], #tech[AWS Sagemaker]
+- Automated hundreds of daily insurance claims investigations with the use of ML, reducing manual investigations by 70%
 - Designed and built ETL workflows for analytic databases - #tech[Airflow], #tech[Spark]
 - Built dashboards tracking performance of ML models against their human counterparts - #tech[Presto], #tech[Airflow]
 - Mentored mid-level Engineers on Data Engineering
@@ -182,7 +195,7 @@ I led a highly technical team to create a vast, event-level data store, used as 
 - Mentored and promoted every Software Engineer on my team
 - Collaborated with ML Engineers and Data Scientists to release and update models in production code
 - Collaborated with outside Engineering and Data Science stakeholders to design a flexible data pipeline
-- Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
+// - Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
 - Led project to migrate legacy systems from EC2 to Kubernetes (EKS) - #tech[Kubernetes]
 - Migrated legacy core business logic to modern systems - #tech[Kafka], #tech[Airflow]
 - Managed a team owning 800+ instances - #tech[AWS]
@@ -196,11 +209,11 @@ I led a highly technical team to create a vast, event-level data store, used as 
 I stabilized and scaled a massive computing cluster, halved instance count, and saved over \$2M annually. Comprising a massive 30k codebase, the real-time system contained all business logic to power the MOAT dashboard, and required biweekly deployments. Here, I emphasized stability and correctness, deploying frequent changes across 1,000+ instances.
 
 - Managed weekly software releases for core business logic, contributed to by 4 distinct teams
-- Contributed and advised on long-term roadmap as an Independent Contributor
+- Built multiyear roadmap for the data pipeline, and the systems that power it
 - Onboarded all new hires to MOAT's data pipeline
-- Designed and built stream-processing applications processing 1.2M+ events/second - #tech[Go], #tech[Python], #tech[Kafka]
+- Designed and built stream-processing applications processing 1.2M+ events/second - #tech[Go-lang], #tech[Python], #tech[Kafka]
 - Designed and built system-wide wire protocol - #tech[Protobuf]
-- Built custom software that reduced instance count by 50%, saving over \$2M dollars - #tech[Go]
+- Built custom software that reduced instance count by 50%, saving over \$2M dollars - #tech[Go-lang]
 - Built and maintained software end-to-end over 1,000+ AWS instances (c5.xl, r5.8xl)
 - Designed "cold storage" data schema - #tech[Parquet]
 - Maintained historical databases, importing 800,000,000+ rows per day - Highly modified #tech[Postgres]
@@ -211,11 +224,11 @@ I stabilized and scaled a massive computing cluster, halved instance count, and 
 I led an interdisciplinary team as a product-minded Data Engineer, building both the core data pipeline and an initial version of the Chartbeat Historical product. This position introduced me to large-scale distributed systems, leadership, and implementing product-facing changes.
 
 - Led 7-person interdisciplinary Scrum Team
-- Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
+// - Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
 - Designed and built core data pipeline, processing 300,000+ events per second - #tech[Kafka] and #tech[Clojure]
 - Designed and maintained session-level data warehouse - #tech[Amazon Redshift]
 - Designed and maintained sub-second query databases, importing 1,000,000+ rows per hour - #tech[Postgres]
 - Designed wire protocol - #tech[Protobuf]
 - Built and maintained real-time data-scrubbing libraries - #tech[Clojure], #tech[Java]
-- Wrote checks, measuring pipeline health and recording instances of data-loss - #tech[Nagios]
+// - Wrote checks, measuring pipeline health and recording instances of data-loss - #tech[Nagios]
 - Deployed and configured production machines - #tech[Puppet], #tech[Fabric]
