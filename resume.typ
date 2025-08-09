@@ -94,7 +94,7 @@
 == tl;dr:
 
 AI Hacker and Chaos Engineering Advocate, operating at immense scales with zero
-downtime. I have worked for 15 years as a Software Engineer and Software
+downtime. I have worked for 20 years as a Software Engineer and Software
 Engineering Manager, tackling problems in "Big Data" from the get-go. My teams
 and I have consistently solved complex problems, owned a ton of infrastructure,
 and celebrated the delivery of ambitious projects. Whatever my ikigai is, it
@@ -105,7 +105,7 @@ braids Mathematics and Programming; _I'm loving this AI boom_.
   column-gutter: 1em,
   row-gutter: 0.25em,
   inset: (x: 0.0em, y: 0.3em),
-  [ *ML + AI* ], [ #tech[Generative AI], #tech[LLMs], #tech[Pinecone], #tech[pgvector], #tech[OpenAI], #tech[LangGraph], #tech[LangSmith], #tech[Fine-tuning], #tech[LoRA] ],
+  [ *ML + AI* ], [ #tech[Generative AI], #tech[LLMs], #tech[RAG], #tech[Knowledge Graphs], #tech[pgvector], #tech[LangGraph], #tech[LangSmith], #tech[Fine-tuning], #tech[LoRA] ],
   [ *Engineering + Platform* ], [ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[GCP], #tech[Go-lang], #tech[Python] ],
   [ *Achievements* ], [
     - #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving challenging technical problems
@@ -114,7 +114,10 @@ braids Mathematics and Programming; _I'm loving this AI boom_.
     - #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
     - #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
     - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] to build red-team models for synthetic data generation
-  ]
+  ],
+  // [ *Education* ], [
+  //   Mathematics, Bachelor of Science, Boston University
+  // ],
 )
 
 
@@ -133,7 +136,7 @@ client-advisor matching system, optimizing Cost-per-Lead.
   #tech[LangGraph], #tech[LLM]
 - Achieved \~0% hallucinations through grounding and post-inference validation techniques -
   #tech[LangGraph], #tech[Python]
-- Built comprehensive LLM testing infrastructure: evaluation pipeline, golden datasets, custom hallucination scoring - catching 99% of quality issues before production -
+- Built and curated LLM evaluation pipelines, golden datasets, & hallucination scoring - catching 99% of issues -
   #tech[LangSmith]
 - Architected multi-agent system managing complete client lifecycle, processing 1000+ meetings per day -
   #tech[LangGraph]
@@ -142,9 +145,11 @@ client-advisor matching system, optimizing Cost-per-Lead.
 - Built sub-12 second transcript analysis pipeline for real-time processing -
   #tech[Celery], #tech[Amazon SQS]
 - Designed complete agent architecture including RAG, memory, and tool usage systems -
-  #tech[pgvector], #tech[LangGraph]
+  #tech[pgvector], #tech[RAG], #tech[LangGraph]
 - Implemented hybrid-search RAG system across 1,000,000+ client communications -
-  #tech[pgvector], #tech[OpenAI Embeddings]
+  #tech[GraphRAG]/#tech[LightRAG], #tech[pgvector]
+- Modified open-source dynamic Knowledge Graph, LightRAG, to support pgvector/Postgres backend -
+  #tech[pgvector], #tech[Python]
 
 
 
@@ -158,13 +163,11 @@ Freelanced, worked on several projects with early-stage startups, building out A
 - Designed Vector DB for context-aware search of similar sent emails - #tech[Pinecone], #tech[Google Vector Search]
 - Designed and deployed custom evaluation framework for measuring LLM performance - #tech[Python]
 - Curated datasets for evaluation and fine-tuning - #tech[Python]
-- Architected and designed large scale fine-tuning workflows for email drafting - #tech[Python]
 
 ==== Stealth Startup: FoodTech, translating conversations into API calls
 - Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
 - Designed and built question-answering workflows inspired by Graph-of-thoughts - #tech[OpenAI API], #tech[Python]
 - Designed and built SMS-based chat interface to LLMs - #tech[AWS Bedrock], #tech[LangChain], #tech[Twilio], #tech[Python]
-- Designed and built interface from LLM conversations to downstream APIs - #tech[AWS Bedrock], #tech[Python]
 - Automated MLOps for LLM-based projects - finetuning, testing, deployment, and performance evaluation
 - Designed and deployed IaC for all services - #tech[Terraform]
 
