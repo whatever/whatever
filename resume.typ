@@ -160,8 +160,8 @@ Freelanced, worked on several projects with early-stage startups, building out A
 ==== WorkMate Labs: Workmate is your AI teammate
 - Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[Python]
 - Designed and deployed LLM Prompts for contextual, personal email drafting - #tech[ChatGPT], #tech[Gemini], #tech[LLM]
-- Designed retrieval system for context-aware search of similar sent emails
 - Designed and deployed custom evaluation framework for measuring LLM performance - #tech[LangSmith], #tech[Python]
+- Designed retrieval system for context-aware search of similar sent emails - #tech[Retrieval], #tech[node.js]
 
 ==== Stealth Startup: FoodTech, translating conversations into API calls
 - Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
@@ -185,8 +185,8 @@ Returning to the startup world, I designed and built products, catering to the I
 - Automated hundreds of daily insurance claims investigations with the use of ML, reducing manual investigations by 70%
 - Designed and built ETL workflows for analytic databases - #tech[Airflow], #tech[Spark]
 - Built dashboards tracking performance of ML models against their human counterparts - #tech[Presto], #tech[Airflow]
-- Mentored mid-level Engineers on Data Engineering
 - Deployed and maintained infrastructure - #tech[AWS CloudFormation], #tech[AWS SageMaker]
+- Mentored mid-level Engineers on Data Engineering
 
 === #job([Oracle Data Cloud, MOAT <sec-oracle>], "Software Engineering Manager", "December 2019 - October 2021")
 
