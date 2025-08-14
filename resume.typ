@@ -113,7 +113,7 @@ braids Mathematics and Programming; _I'm loving this AI boom_.
     - #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1M+ records/second
     - #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
     - #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
-    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] to build red-team models for synthetic data generation
+    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral and gpt-oss-20b] to build red-team models for synthetic data generation
   ],
   // [ *Education* ], [
   //   Mathematics, Bachelor of Science, Boston University
@@ -160,9 +160,8 @@ Freelanced, worked on several projects with early-stage startups, building out A
 ==== WorkMate Labs: Workmate is your AI teammate
 - Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[Python]
 - Designed and deployed LLM Prompts for contextual, personal email drafting - #tech[ChatGPT], #tech[Gemini], #tech[LLM]
-- Designed Vector DB for context-aware search of similar sent emails - #tech[Pinecone], #tech[Google Vector Search]
-- Designed and deployed custom evaluation framework for measuring LLM performance - #tech[Python]
-- Curated datasets for evaluation and fine-tuning - #tech[Python]
+- Designed retrieval system for context-aware search of similar sent emails
+- Designed and deployed custom evaluation framework for measuring LLM performance - #tech[LangSmith], #tech[Python]
 
 ==== Stealth Startup: FoodTech, translating conversations into API calls
 - Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
@@ -171,7 +170,7 @@ Freelanced, worked on several projects with early-stage startups, building out A
 - Automated MLOps for LLM-based projects - finetuning, testing, deployment, and performance evaluation
 - Designed and deployed IaC for all services - #tech[Terraform]
 
-==== Stealth Startup: Generative AI as a service
+==== Stealth Startup: Generative AI Customers as a service
 - Diagnosed and solved a mission-critical problem for scheduling flow of traffic to clients - #tech[Math]!
 - Designed and built API to develop, simulate, and actually orchestrate system traffic flows - #tech[Python]
 - Standardized ML Ops approach for use with Stable Diffusion and LLMs - #tech[Terraform]
