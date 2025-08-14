@@ -1,0 +1,2 @@
+- [ ] training with tool usage
+- [ ] `gpt-oss-20b` pen-pen
