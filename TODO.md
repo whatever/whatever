@@ -1,2 +1,3 @@
 - [ ] training with tool usage
 - [ ] `gpt-oss-20b` pen-pen
+- [ ] update `razorbla.de` for the first time in ~10 years
