@@ -158,10 +158,10 @@ client-advisor matching system, optimizing Cost-per-Lead.
 Freelanced, worked on several projects with early-stage startups, building out AI products.
 
 ==== WorkMate Labs: Workmate is your AI teammate
-- Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[Python]
+- Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[TypeScript]
 - Designed and deployed LLM Prompts for contextual, personal email drafting - #tech[ChatGPT], #tech[Gemini], #tech[LLM]
-- Designed and deployed custom evaluation framework for measuring LLM performance - #tech[LangSmith], #tech[Python]
-- Designed retrieval system for context-aware search of similar sent emails - #tech[Retrieval], #tech[node.js]
+- Designed and deployed custom evaluation framework for measuring LLM performance - #tech[LangSmith], #tech[TypeScript]
+- Designed retrieval system for context-aware search of similar sent emails - #tech[Retrieval], #tech[TypeScript]
 
 ==== Stealth Startup: FoodTech, translating conversations into API calls
 - Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
