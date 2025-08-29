@@ -83,6 +83,7 @@
         columns: (auto, auto),
         stroke: none,
         inset: (x: 6pt, y: 3pt),
+        [*HuggingFace:*], [ #link("https://huggingface.co/WHATEVER420")[\@WHATEVER420] ],
         [*GitHub:*],    [ #link("https://github.com/whatever/")[\@whatever] ],
         [*LinkedIn:*],  [ #link("https://www.linkedin.com/in/whatevergg/")[/in/whatevergg] ],
         [*Email:*],     [ #link("mailto:matt@worldshadowgovernment.com")[matt\@worldshadowgovernment.com] ]
@@ -108,6 +109,7 @@ braids Mathematics and Programming; _I'm loving this AI boom_.
   [ *ML + AI* ], [ #tech[Generative AI], #tech[LLMs], #tech[RAG], #tech[Knowledge Graphs], #tech[pgvector], #tech[LangGraph], #tech[LangSmith], #tech[Fine-tuning], #tech[LoRA] ],
   [ *Engineering + Platform* ], [ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[GCP], #tech[Go-lang], #tech[Python] ],
   [ *Achievements* ], [
+    - #link("https://huggingface.co/WHATEVER420/script-kiddy")[Fine-tuned Qwen3] for vulnerability scanning and tool usage
     - #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving challenging technical problems
     - #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
     - #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1M+ records/second
