@@ -35,30 +35,17 @@
 
 #let tech(content) = {
   let text-str = repr(content)
-
-  // Fold into a large prime modulus. `calc` has no bitwise ops, so the
-  // avalanche comes from multiplying by a Knuth-style constant and reducing
-  // mod a Mersenne prime - the plain `hash * 31` fold left adjacent inputs in
-  // adjacent buckets, which is what collapsed the palette.
   let prime = 2147483647
   let hash = 2166136261
+
   for c in text-str.clusters() {
     hash = calc.rem(hash * 31 + str.to-unicode(c), prime)
   }
+
   let mixed = calc.rem(hash * 2654435761, prime)
-
-  // Quantize to widely-spaced buckets. With ~60 tags over a free 360deg the
-  // mean gap is under 6deg, so near-misses read as "almost the same tech" -
-  // a false signal. Snapping to 15deg steps means two tags are either
-  // clearly different or exactly equal, and never misleadingly close.
   let hue = calc.rem(mixed, 24) * 15
-
-  // Saturation and lightness come from separate reductions of the mixed
-  // hash. Previously both derived from `hash` mod divisors of 360, so they
-  // were perfectly correlated with hue and added no real variation.
   let saturation = (42, 52, 62).at(calc.rem(calc.div-euclid(mixed, 24), 3))
   let lightness = (89, 93).at(calc.rem(calc.div-euclid(mixed, 72), 2))
-
   let bg-color = color.hsl(hue * 1deg, saturation * 1%, lightness * 1%)
 
   box(
@@ -101,10 +88,14 @@
   ]
 )
 
-== tl;dr:
+== tl;dr
 
-ML Engineering Manager and AI Hacker, solving the hardest problems by delivering bleeding-edge research into production. I have worked for 20+ years as a Researcher, Engineer, and Manager, tackling problems at every level: real-time scale, frontier
-innovation, and shipping usable products. My teams and I have consistently solved complex problems, owned a ton of infrastructure, and celebrated the delivery of ambitious projects. These days I'm bringing closed-source-level performance to on-prem: fine-tuned open-weight models and evaluation stacks that run entirely inside the boundary, no data egress. Whatever my ikigai is, it braids Mathematics and Programming; lfg.
+ML Engineering Manager and AI Hacker, solving the hardest problems by delivering bleeding-edge research into production.
+I have worked for 20+ years as a Researcher, Engineer, and Manager, tackling problems at every level: real-time scale,
+frontier innovation, and shipping usable products. My teams and I have consistently solved complex problems, owned a ton
+of infrastructure, and celebrated the delivery of ambitious projects. These days I'm bringing closed-source-level
+performance to on-prem: fine-tuned open-weight models and evaluation stacks that run entirely inside the boundary, no data egress.
+Whatever my ikigai is, it braids Mathematics and Programming; lfg.
 
 #grid(
   columns: (auto, 1fr),
@@ -117,7 +108,7 @@ innovation, and shipping usable products. My teams and I have consistently solve
   [ *Engineering + Platform* ], [ #pad(left: 0.75em)[ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[GCP], #tech[Golang], #tech[Python] ] ],
   [ *Achievements* ], [
     #set list(indent: 0em, body-indent: 0.4em)
-    - #link("https://github.com/Lazarus-AI/clearwing")[Building Clearwing], an autonomous vulnerability scanner and source-code hunter - AI cyber security research
+    - #link("https://github.com/Lazarus-AI/clearwing")[Building Clearwing], an agentic SOC and pentester
     - #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[Curated data collection and evaluation of unaligned models] - covered in The Economist
     - #link("https://huggingface.co/pool-water/script-kiddie")[Fine-tuned Qwen3] for vulnerability scanning and tool usage
     - #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving large-scale data problems
@@ -135,23 +126,27 @@ innovation, and shipping usable products. My teams and I have consistently solve
 
 === #job([Lazarus AI <sec-lazarus>], "ML Engineering Manager", "October 2025 - Present")
 
-#link("https://www.lazarusaie.com/research")[Leading ML engineering and applied research] across a broad portfolio: AI-driven
-exploit analysis and penetration testing, document extraction, on-premise
-contract-driven projects, and confidential computing. Consulting to core
-engineering on a per-project basis, bringing bleeding-edge research into
-production systems.
+#link("https://www.lazarusaie.com/research")[Leading ML engineering and applied research] across a broad portfolio: Cybersecurity, Public-Sector, Insurance.
+Here, my work has been delivering bleeding-edge technology into effective, comprehensible products for a wide-range of contracts.
 
-- Drove evaluation-driven engineering culture, improving document extraction correctness from 20% to 85%
-- Demonstrated end-to-end AI-driven vulnerability scanning to RCE using self-hosted unaligned open-weight models - #tech[Clearwing]
-- Directed four concurrent project lines as ML Engineering Manager: on-prem privacy-focused public-sector delivery, 1,000+-page insurance underwriting documents, evaluation of novel unaligned fine-tunes, and the Clearwing adversarial security harness
-- Managed ML team with rotating contributors, providing technical direction and per-project leadership to core engineering
-- Built evaluation harnesses across document extraction, agentic task performance, and CVE exploit validation: LLM-as-judge, golden datasets, offline + CI benchmarking - #tech[Langfuse], #tech[Python]
-- Overhauled LLM observability to run fully on-prem under HIPAA and SOC 2 constraints - zero third-party data egress: trace propagation, cost tracking, and evals - #tech[Langfuse], #tech[k3s], #tech[HIPAA], #tech[SOC 2]
-- Shipped features for Clearwing, an autonomous vulnerability research agent: sandboxed analysis, exploit validation, budget-bounded orchestration - #tech[Python], #tech[Docker]
-- Fine-tuned and deployed open-weight models on self-hosted inference infrastructure - #tech[vLLM], #tech[LoRA], #tech[k3s]
-- Owned data collection and evaluation for #link("https://huggingface.co/Lazarus-Ai/models")[ReAligned], a Qwen3.5 finetune eliminating propaganda, lying, and gaslighting: 0.8B - 35B public, plus privately-released 122B and 397B variants; covered in #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[The Economist] - #tech[Qwen3.5]
-- Architected multi-model routing layer with confidence scoring, OCR grounding, and post-inference validation - #tech[LangGraph]
-- Owned production ML platform: k3s cluster, ArgoCD, LiteLLM, Dagster pipelines - #tech[Terraform], #tech[Kubernetes]
+- Managed 3 concurrent project lines: #link("https://github.com/Lazarus-AI/clearwing")[Clearwing] (Agentic SOC + Pentesting), #link("https://www.lazarusaie.com/platform")[AIE] (Document Extraction), ATLS (Public Sector)
+- Managed 4-person team, translating bleeding edge research into product tech stacks
+- Built model-agnostic Agentic Systems across 4 projects, replacing legacy document extraction -
+  #tech[LangGraph], #tech[RAG], #tech[OCR]
+- Extended document-parsing capability to 1,000+ pages at 1/10 per-page cost - #tech[LangGraph], #tech[RLM]
+- Migrated clients from cloud-hosted SaaS solutions to sovereignly-owned, on-prem solutions -
+  #tech[LangGraph], #tech[vLLM]
+- Built LLM observability stack to run fully on-prem under HIPAA and SOC 2 constraints -
+  #tech[Langfuse]
+- Drove evaluation-driven engineering culture, improving document extraction correctness from 20% to 85% -
+  #tech[Langfuse]
+- Fine-tuned and deployed open-weight models on self-hosted inference infrastructure -
+  #tech[vLLM], #tech[Axolotl], #tech[LLaMa-Factory]
+- Built features for Clearwing, replicating 80% of project #link("https://www.anthropic.com/glasswing")[Glasswing's findings] with open-weight models -
+  #tech[Python]
+- Owned data collection and evaluation for #link("https://huggingface.co/Lazarus-Ai/models")[ReAligned], finetunes eliminating propaganda; covered in #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[The Economist]
+- Owned production ML platform: k3s cluster, ArgoCD, Dagster pipelines -
+  #tech[Terraform], #tech[Kubernetes], #tech[MLOps]
 
 === #job([Warmer <sec-warmer>], "Founding AI Engineer", "November 2024 - October 2025")
 
@@ -216,69 +211,73 @@ Returning to the startup world, I designed and built products, catering to the I
 - Deployed and maintained infrastructure - #tech[AWS CloudFormation], #tech[Amazon SageMaker]
 - Mentored mid-level Engineers on Data Engineering
 
-=== #job([Sabbatical], "Career Break", "October 2021 - January 2023")
+#v(0.4em)
+#block(fill: rgb("#AAAAAA"), width: 100%, inset: (x: 0.5em, y: 0.4em))[
+  #text(size: 11pt, weight: "bold", fill: white)[#grid(
+    columns: (30%, 1fr, auto),
+    column-gutter: 1em,
+    [_Sabbatical_],
+    [],
+    [#text(size: 0.7em, weight: "medium", style: "italic")[#align(right)[October 2021 – January 2023]]],
+  )]
+]
 
-- Traded the post-acquisition golden handcuffs for plane tickets
-- Came back deliberately, trading scale for deep focus in AI
+=== #job([Oracle Data Cloud, MOAT <sec-oracle>], "Software Engineering Manager", "February 2017 - October 2021")
 
-=== #job([Oracle Data Cloud, MOAT <sec-oracle>], "Software Engineering Manager", "December 2019 - October 2021")
+I led a highly technical team to create a vast, event-level data store, used as the source-of-truth for the suite of MOAT products.
+The real-time system processes 1.2M+ records/second, and requires zero downtime. Consequently, I grew a team with high technical aptitude,
+and emphasized ownership as a core principle in Software Development. Acquired by Oracle.
 
-I led a highly technical team to create a vast, event-level data store, used as the source-of-truth for the suite of MOAT products. The real-time system processes 1.2M+ records/second, and requires zero downtime. Consequently, I grew a team with high technical aptitude, and emphasized ownership as a core principle in Software Development.
+==== Engineering Manager, post-acquisition
 
 - Managed and grew team of 7 Data Engineers, ranging from College Recruit to Senior Engineer
 - Built multiyear Software Roadmap with Engineering Managers and Product Owners
 - Mentored and promoted every Software Engineer on my team
 - Collaborated with ML Engineers and Data Scientists to release and update models in production code
 - Collaborated with outside Engineering and Data Science stakeholders to design a flexible data pipeline
-// - Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
 - Led project to migrate legacy systems from EC2 to Kubernetes (EKS) - #tech[Kubernetes]
 - Migrated legacy core business logic to modern systems - #tech[Kafka], #tech[Airflow]
 - Managed a team owning 1,000+ instances - #tech[AWS]
 - Managed a budget of \$340,000+ per month
 - Authored technical proposals for Data Privacy, System Architecture, and Wire Protocols
-- Co-wrote and presented software application proposals, detailing and defending technology decisions
-- Reviewed and approved technical design proposals and outage postmortems
 
-=== #job([Oracle Data Cloud, MOAT <sec-oracle-engineer>], "Tech Lead, Data Engineering", "February 2017 - December 2019")
 
-I stabilized and scaled a massive computing cluster, halved instance count, and saved over \$2M annually. Comprising a massive 30k-line codebase, the real-time system contained all business logic to power the MOAT dashboard, and required biweekly deployments. Here, I emphasized stability and correctness, deploying frequent changes across 1,000+ instances.
+==== Technical Lead, pre-acquisition <sec-oracle-engineer>
 
 - Managed weekly software releases for core business logic, contributed to by 4 distinct teams
 - Built multiyear roadmap for the data pipeline, and the systems that power it
-- Onboarded all new hires to MOAT's data pipeline
 - Designed and built stream-processing applications processing 1.2M+ events/second - #tech[Golang], #tech[Python], #tech[Kafka]
 - Designed and built system-wide wire protocol - #tech[Protobuf]
 - Built custom software that reduced instance count by 50%, saving over \$2M dollars - #tech[Golang]
 - Built and maintained software end-to-end over 1,000+ AWS instances (c5.xl, r5.8xl)
 - Designed "cold storage" data schema - #tech[Parquet]
 - Maintained historical databases, importing 800,000,000+ rows per day - Highly modified #tech[Postgres]
-- Acquired by Oracle Data Cloud
 
-=== #job([Chartbeat], "Tech Lead, Data Engineering", "December 2014 - December 2016")
-
-I led an interdisciplinary team as a product-minded Data Engineer, building both the core data pipeline and an initial version of the Chartbeat Historical product. This position introduced me to large-scale distributed systems, leadership, and implementing product-facing changes.
-
-- Led 7-person interdisciplinary Scrum Team
-// - Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
-- Designed and built core data pipeline, processing 300,000+ events per second - #tech[Kafka] and #tech[Clojure]
-- Designed and maintained session-level data warehouse - #tech[Amazon Redshift]
-- Designed and maintained sub-second query databases, importing 1,000,000+ rows per hour - #tech[Postgres]
-- Designed wire protocol - #tech[Protobuf]
-- Built and maintained real-time data-scrubbing libraries - #tech[Clojure], #tech[Java]
-// - Wrote checks, measuring pipeline health and recording instances of data-loss - #tech[Nagios]
-- Deployed and configured production machines - #tech[Puppet], #tech[Fabric]
-
-=== #job([Harvard University, IQSS <sec-research>], "Statistical Programmer, Software Maintainer", "May 2010 - July 2013")
-
-Statistical software and data privacy research at Harvard's Institute for
-Quantitative Social Science. Where I learned to turn research ideas into
-production, open-source code.
-
-- Developed and maintained #link("https://zelig.hsites.harvard.edu")[Zelig], an open-source statistical package unifying model interfaces - #tech[R]
-- Contributed statistical analysis software to #link("https://dataverse.harvard.edu")[Dataverse], open-source infrastructure for research data sharing, preservation, and citation - #tech[Java], #tech[R]
-- Built the Zelig extension to the Dataverse network - #tech[Java]
-- Taught statistical programming workshops - beginner through developing statistical packages
-
+//=== #job([Chartbeat], "Tech Lead, Data Engineering", "December 2014 - December 2016")
+//
+//I led an interdisciplinary team as a product-minded Data Engineer, building both the core data pipeline and an initial version of the Chartbeat Historical product. This position introduced me to large-scale distributed systems, leadership, and implementing product-facing changes.
+//
+//- Led 8-person interdisciplinary Scrum Team
+//// - Organized and led "Agile" rituals - Sprint Planning, Sprint Review, and Backlog Grooming
+//- Designed and built core data pipeline, processing 300,000+ events per second - #tech[Kafka] and #tech[Clojure]
+//- Designed and maintained session-level data warehouse - #tech[Amazon Redshift]
+//- Designed and maintained sub-second query databases, importing 1,000,000+ rows per hour - #tech[Postgres]
+//- Designed wire protocol - #tech[Protobuf]
+//- Built and maintained real-time data-scrubbing libraries - #tech[Clojure], #tech[Java]
+//// - Wrote checks, measuring pipeline health and recording instances of data-loss - #tech[Nagios]
+//- Deployed and configured production machines - #tech[Puppet], #tech[Fabric]
+//
+//=== #job([Harvard University, IQSS <sec-research>], "Statistical Programmer, Software Maintainer", "May 2010 - July 2013")
+//
+//Statistical software and data privacy research at Harvard's Institute for
+//Quantitative Social Science. Where I learned to turn research ideas into
+//production, open-source code.
+//
+//- Developed and maintained #link("https://zelig.hsites.harvard.edu")[Zelig], an open-source statistical package unifying model interfaces - #tech[R]
+//- Contributed statistical analysis software to #link("https://dataverse.harvard.edu")[Dataverse], open-source infrastructure for research data sharing, preservation, and citation - #tech[Java], #tech[R]
+//- Built the Zelig extension to the Dataverse network - #tech[Java]
+//- Taught statistical programming workshops - beginner through developing statistical packages
+//
 // === #job([New England Complex Systems Institute], "Research Assistant", "2005 - 2008")
 //
 // Applied Mathematics and complex systems research - the foundation of everything since.
