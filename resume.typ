@@ -104,19 +104,19 @@ Whatever my ikigai is, it braids Mathematics and Programming; lfg.
   inset: (x: 0.0em, y: 0.3em),
   // the achievements list indents its text by the bullet marker's width, so the
   // other rows get matching padding to line their text up with it
-  [ *ML + AI* ], [ #pad(left: 0.75em)[ #tech[LLMs], #tech[Generative AI], #tech[AI Agents], #tech[RAG], #tech[Fine-tuning], #tech[PyTorch], #tech[vLLM], #tech[Evals], #tech[Knowledge Graphs] ] ],
-  [ *Engineering + Platform* ], [ #pad(left: 0.75em)[ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[GCP], #tech[Golang], #tech[Python] ] ],
+  [ *ML + AI* ], [ #pad(left: 0.75em)[ #tech[LLMs], #tech[Generative AI], #tech[AI Agents], #tech[RAG], #tech[MCP], #tech[Fine-tuning], #tech[PyTorch], #tech[vLLM], #tech[Evals], #tech[Knowledge Graphs] ] ],
+  [ *Engineering + Platform* ], [ #pad(left: 0.75em)[ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[Spark], #tech[Golang], #tech[Python] ] ],
   [ *Achievements* ], [
     #set list(indent: 0em, body-indent: 0.4em)
     - #link("https://github.com/Lazarus-AI/clearwing")[Building Clearwing], an agentic SOC and pentester
     - #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[Curated data collection and evaluation of unaligned models] - covered in The Economist
     - #link("https://huggingface.co/pool-water/script-kiddie")[Fine-tuned Qwen3] for vulnerability scanning and tool usage
-    - #link(<sec-oracle>)[Managed Backend and Data Engineering teams] solving large-scale data problems
-    - #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
+    - #link(<sec-oracle>)[Built company-wide data pipeline and lake], unifying Research, Product, and Engineering
     - #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1.2M+ records/second
+    - #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
     - #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
     - #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
-    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] to build red-team models for synthetic data generation
+    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] forever-ago for use as a POC red-team model
   ],
   [ *Education* ], [ #pad(left: 0.75em)[ Bachelor of Science, Mathematics - Boston University ] ],
 )
@@ -127,7 +127,7 @@ Whatever my ikigai is, it braids Mathematics and Programming; lfg.
 === #job([Lazarus AI <sec-lazarus>], "ML Engineering Manager", "October 2025 - Present")
 
 #link("https://www.lazarusaie.com/research")[Leading ML engineering and applied research] across a broad portfolio: Cybersecurity, Public-Sector, Insurance.
-Here, my work has been delivering bleeding-edge technology into effective, comprehensible products for a wide-range of contracts.
+Here, my work has been delivering bleeding-edge technology into effective, comprehensible products for a wide range of contracts.
 
 - Managed 3 concurrent project lines: #link("https://github.com/Lazarus-AI/clearwing")[Clearwing] (Agentic SOC + Pentesting), #link("https://www.lazarusaie.com/platform")[AIE] (Document Extraction), ATLS (Public Sector)
 - Managed 4-person team, translating bleeding edge research into product tech stacks
@@ -136,6 +136,8 @@ Here, my work has been delivering bleeding-edge technology into effective, compr
 - Extended document-parsing capability to 1,000+ pages at 1/10 per-page cost - #tech[LangGraph], #tech[RLM]
 - Migrated clients from cloud-hosted SaaS solutions to sovereignly-owned, on-prem solutions -
   #tech[LangGraph], #tech[vLLM]
+- Synthesized and cataloged training data for the ReAligned/UnCut series of Lazarus Models
+  #tech[Dagster]
 - Built LLM observability stack to run fully on-prem under HIPAA and SOC 2 constraints -
   #tech[Langfuse]
 - Drove evaluation-driven engineering culture, improving document extraction correctness from 20% to 85% -
@@ -231,21 +233,25 @@ and emphasized ownership as a core principle in Software Development. Acquired b
 ==== Engineering Manager, post-acquisition
 
 - Managed and grew team of 7 Data Engineers, ranging from College Recruit to Senior Engineer
+- Designed, built, and maintained infra end-to-end: web ingest, stream-processing, hourly ETL to Parquet
 - Built multiyear Software Roadmap with Engineering Managers and Product Owners
+- Designed and built the event-level data lake, unifying Research, Product, and Engineering datasets -
+  #tech[Kafka], #tech[Airflow], #tech[Parquet]
+- Processed and stored over 1.2M+ events/second in realtime -
+  #tech[Kafka], #tech[Golang], #tech[Python]
+- Migrated legacy core business logic to modern systems -
+  #tech[Kafka], #tech[Airflow]
+- Managed a team owning 1,000+ instances with a budget of \$340,000+ per month -
+  #tech[AWS]
+- Collaborated with ML and Engineering to design a pipeline powering 5 distinct teams
 - Mentored and promoted every Software Engineer on my team
-- Collaborated with ML Engineers and Data Scientists to release and update models in production code
-- Collaborated with outside Engineering and Data Science stakeholders to design a flexible data pipeline
-- Led project to migrate legacy systems from EC2 to Kubernetes (EKS) - #tech[Kubernetes]
-- Migrated legacy core business logic to modern systems - #tech[Kafka], #tech[Airflow]
-- Managed a team owning 1,000+ instances - #tech[AWS]
-- Managed a budget of \$340,000+ per month
-- Authored technical proposals for Data Privacy, System Architecture, and Wire Protocols
+// - Authored technical proposals for Data Privacy, System Architecture, and Wire Protocols
 
 
 ==== Technical Lead, pre-acquisition <sec-oracle-engineer>
 
 - Managed weekly software releases for core business logic, contributed to by 4 distinct teams
-- Built multiyear roadmap for the data pipeline, and the systems that power it
+// - Built multiyear roadmap for the data pipeline, and the systems that power it
 - Designed and built stream-processing applications processing 1.2M+ events/second - #tech[Golang], #tech[Python], #tech[Kafka]
 - Designed and built system-wide wire protocol - #tech[Protobuf]
 - Built custom software that reduced instance count by 50%, saving over \$2M dollars - #tech[Golang]
@@ -285,3 +291,14 @@ and emphasized ownership as a core principle in Software Development. Acquired b
 // - Developed simulations and mathematical models - #tech[Python]
 // - Assisted lecturers for course in Simulation and Mathematical Modeling
 // - Built the software substrate for research projects: web applications and MediaWiki extensions - #tech[LAMP], #tech[PHP]
+
+#v(0.4em)
+#block(fill: rgb("#AAAAAA"), width: 100%, inset: (x: 0.5em, y: 0.4em))[
+  #text(size: 11pt, weight: "bold", fill: white)[#grid(
+    columns: (30%, 1fr, auto),
+    column-gutter: 1em,
+    [_Prior Research_],
+    [#text(size: 0.7em, weight: "medium", style: "italic")[Harvard IQSS, NECSI]],
+    [#text(size: 0.7em, weight: "medium", style: "italic")[#align(right)[2005 – 2013]]],
+  )]
+]
