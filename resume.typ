@@ -58,6 +58,10 @@
   )
 }
 
+#let stack(..items) = pad(bottom: 0.3em)[
+  #text(weight: "bold")[Stack:] #items.pos().map(t => tech(t)).join(", ")
+]
+
 #show heading.where(level: 3): it => [
   #set text(size: 11pt, weight: "bold")
   #it.body
@@ -93,9 +97,7 @@
 ML Engineering Manager and AI Hacker, solving the hardest problems by delivering bleeding-edge research into production.
 I have worked for 20+ years as a Researcher, Engineer, and Manager, tackling problems at every level: real-time scale,
 frontier innovation, and shipping usable products. My teams and I have consistently solved complex problems, owned a ton
-of infrastructure, and celebrated the delivery of ambitious projects. These days I'm bringing closed-source-level
-performance to on-prem: fine-tuned open-weight models and evaluation stacks that run entirely inside the boundary, no data egress.
-Whatever my ikigai is, it braids Mathematics and Programming; lfg.
+of infrastructure, and celebrated the delivery of ambitious projects.
 
 #grid(
   columns: (auto, 1fr),
@@ -110,13 +112,10 @@ Whatever my ikigai is, it braids Mathematics and Programming; lfg.
     #set list(indent: 0em, body-indent: 0.4em)
     - #link("https://github.com/Lazarus-AI/clearwing")[Building Clearwing], an agentic SOC and pentester
     - #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[Curated data collection and evaluation of unaligned models] - covered in The Economist
-    - #link("https://huggingface.co/pool-water/script-kiddie")[Fine-tuned Qwen3] for vulnerability scanning and tool usage
+    - #link("https://huggingface.co/pool-water/script-kiddie")[Fine-tuned Qwen3] for red-team use in 2025, before commodity cyber-specialized LLMs existed
     - #link(<sec-oracle>)[Built company-wide data pipeline and lake], unifying Research, Product, and Engineering
     - #link(<sec-oracle-engineer>)[Architected and deployed massive-scale, real-time data pipelines]: 1.2M+ records/second
-    - #link(<sec-warmer>)[Launched innovative, agent-based, llm-powered products]
     - #link(<sec-oracle-engineer>)[Maintained infrastructure comprising 1,000+ instances]
-    - #link(<sec-freelance>)[Freelanced as a Founding AI Engineer], building ML applications for seed-stage companies
-    - #link(<sec-freelance-synthetic>)[Fine-tuned Mixtral] forever-ago for use as a POC red-team model
   ],
   [ *Education* ], [ #pad(left: 0.75em)[ Bachelor of Science, Mathematics - Boston University ] ],
 )
@@ -129,26 +128,20 @@ Whatever my ikigai is, it braids Mathematics and Programming; lfg.
 #link("https://www.lazarusaie.com/research")[Leading ML engineering and applied research] across a broad portfolio: Cybersecurity, Public-Sector, Insurance.
 Here, my work has been delivering bleeding-edge technology into effective, comprehensible products for a wide range of contracts.
 
+#stack[LangGraph][RAG][OCR][RLM][vLLM][Dagster][Langfuse][Axolotl][LLaMa-Factory][Python][Terraform][Kubernetes][MLOps]
+
 - Managed 3 concurrent project lines: #link("https://github.com/Lazarus-AI/clearwing")[Clearwing] (Agentic SOC + Pentesting), #link("https://www.lazarusaie.com/platform")[AIE] (Document Extraction), ATLS (Public Sector)
 - Managed 4-person team, translating bleeding edge research into product tech stacks
-- Built model-agnostic Agentic Systems across 4 projects, replacing legacy document extraction -
-  #tech[LangGraph], #tech[RAG], #tech[OCR]
-- Extended document-parsing capability to 1,000+ pages at 1/10 per-page cost - #tech[LangGraph], #tech[RLM]
-- Migrated clients from cloud-hosted SaaS solutions to sovereignly-owned, on-prem solutions -
-  #tech[LangGraph], #tech[vLLM]
+- Built model-agnostic Agentic Systems across 4 projects, replacing legacy document extraction
+- Extended document-parsing capability to 1,000+ pages at 1/10 per-page cost
+- Migrated clients from cloud-hosted SaaS solutions to sovereignly-owned, on-prem solutions
 - Synthesized and cataloged training data for the ReAligned/UnCut series of Lazarus Models
-  #tech[Dagster]
-- Built LLM observability stack to run fully on-prem under HIPAA and SOC 2 constraints -
-  #tech[Langfuse]
-- Drove evaluation-driven engineering culture, improving document extraction correctness from 20% to 85% -
-  #tech[Langfuse]
-- Fine-tuned and deployed open-weight models on self-hosted inference infrastructure -
-  #tech[vLLM], #tech[Axolotl], #tech[LLaMa-Factory]
-- Built features for Clearwing, replicating 80% of project #link("https://www.anthropic.com/glasswing")[Glasswing's findings] with open-weight models -
-  #tech[Python]
+- Built LLM observability stack to run fully on-prem under HIPAA and SOC 2 constraints
+- Drove evaluation-driven engineering culture, improving document extraction correctness from 20% to 85%
+- Fine-tuned and deployed open-weight models on self-hosted inference infrastructure
+- Built features for Clearwing, replicating 80% of project #link("https://www.anthropic.com/glasswing")[Glasswing's findings] with open-weight models
 - Owned data collection and evaluation for #link("https://huggingface.co/Lazarus-Ai/models")[ReAligned], finetunes eliminating propaganda; covered in #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[The Economist]
-- Owned production ML platform: k3s cluster, ArgoCD, Dagster pipelines -
-  #tech[Terraform], #tech[Kubernetes], #tech[MLOps]
+- Owned production ML platform: k3s cluster, ArgoCD, Dagster pipelines
 
 === #job([Warmer <sec-warmer>], "Founding AI Engineer", "November 2024 - October 2025")
 
@@ -156,25 +149,17 @@ Building the future of Financial Advisory. In this role, I launched two AI
 products from zero to production: a financial advisor assistant and intelligent
 client-advisor matching system, optimizing Cost-per-Lead.
 
+#stack[LangGraph][OpenAI][Python][LLM][LangSmith][PostHog][Celery][Amazon SQS][pgvector][RAG][GraphRAG][LightRAG]
 
-- Zero-to-One: founded and scaled AI product from zero to first paying customer -
-  #tech[LangGraph], #tech[OpenAI], #tech[Python]
-- Built conversational, lead-gen agent, the foundation of the new business model -
-  #tech[LangGraph], #tech[LLM]
-- Achieved \<1% hallucinations on golden-set evals through grounding and post-inference validation -
-  #tech[LangGraph], #tech[LangSmith]
-- Architected multi-agent system managing complete client lifecycle, processing 1000+ meetings per day -
-  #tech[LangGraph]
-- Introduced experiment-driven development culture with A/B testing and feature flags -
-  #tech[PostHog]
-- Built sub-12 second transcript analysis pipeline for real-time processing -
-  #tech[Celery], #tech[Amazon SQS]
-- Designed complete agent architecture including RAG, memory, and tool usage systems -
-  #tech[pgvector], #tech[RAG], #tech[LangGraph]
-- Implemented hybrid-search RAG system across 1,000,000+ client communications -
-  #tech[GraphRAG]/#tech[LightRAG], #tech[pgvector]
-- Modified open-source dynamic Knowledge Graph, LightRAG, to support pgvector/Postgres backend -
-  #tech[pgvector], #tech[Python]
+- Zero-to-One: founded and scaled AI product from zero to first paying customer
+- Built conversational, lead-gen agent, the foundation of the new business model
+- Achieved \<1% hallucinations on golden-set evals through grounding and post-inference validation
+- Architected multi-agent system managing complete client lifecycle, processing 1000+ meetings per day
+- Introduced experiment-driven development culture with A/B testing and feature flags
+- Built sub-12 second transcript analysis pipeline for real-time processing
+- Designed complete agent architecture including RAG, memory, and tool usage systems
+- Implemented hybrid-search RAG system across 1,000,000+ client communications
+- Modified open-source dynamic Knowledge Graph, LightRAG, to support pgvector/Postgres backend
 
 
 
@@ -182,35 +167,41 @@ client-advisor matching system, optimizing Cost-per-Lead.
 
 Contracted with several early-stage startups, building out AI products.
 
+#stack[LLM][TypeScript][LangSmith][Retrieval][Mixtral][HuggingFace][Python][LangChain][Twilio][Terraform]
 ==== WorkMate Labs: Workmate is your AI teammate
-- Designed and built a Digital Assistant, automating task extraction and email drafting - #tech[LLM], #tech[TypeScript]
-- Designed and deployed LLM Prompts for contextual, personal email drafting - #tech[ChatGPT], #tech[Gemini], #tech[LLM]
-- Designed and deployed custom evaluation framework for measuring LLM performance - #tech[LangSmith], #tech[TypeScript]
-- Designed retrieval system for context-aware search of similar sent emails - #tech[Retrieval], #tech[TypeScript]
+
+- Designed and built a Digital Assistant, automating task extraction and email drafting
+- Designed and deployed LLM Prompts for contextual, personal email drafting
+- Designed and deployed custom evaluation framework for measuring LLM performance
+- Designed retrieval system for context-aware search of similar sent emails
 
 ==== Stealth Startup: FoodTech, translating conversations into API calls
-- Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic> - #tech[Mixtral], #tech[HuggingFace], #tech[Python]
-- Designed and built question-answering workflows inspired by Graph-of-thoughts - #tech[OpenAI API], #tech[Python]
-- Designed and built SMS-based chat interface to LLMs - #tech[Amazon Bedrock], #tech[LangChain], #tech[Twilio], #tech[Python]
+
+- Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic>
+- Designed and built question-answering workflows inspired by Graph-of-thoughts
+- Designed and built SMS-based chat interface to LLMs
 - Automated MLOps for LLM-based projects - finetuning, testing, deployment, and performance evaluation
-- Designed and deployed IaC for all services - #tech[Terraform]
+- Designed and deployed IaC for all services
 
 ==== Stealth Startup: Generative AI Customers as a service
-- Diagnosed and solved a mission-critical problem for scheduling flow of traffic to clients - #tech[Math]!
-- Designed and built API to develop, simulate, and actually orchestrate system traffic flows - #tech[Python]
-- Standardized MLOps approach for use with Stable Diffusion and LLMs - #tech[Terraform]
-- Designed and built tooling to monitor, compare, and research LLM performance - #tech[Python], #tech[LLM], #tech[LLaMa]
+
+- Diagnosed and solved a mission-critical problem for scheduling flow of traffic to clients
+- Designed and built API to develop, simulate, and actually orchestrate system traffic flows
+- Standardized MLOps approach for use with Stable Diffusion and LLMs
+- Designed and built tooling to monitor, compare, and research LLM performance
 
 === #job([Owl.co], "Software Engineer", "January 2023 - September 2023")
 
-Returning to the startup world, I designed and built products, catering to the Insurance Industry, with a focus on integrating Machine Learning with Human tasks. Here my focus was on ML products instead of Data scale.
+Designed and built products for insurance tech, focusing on integrating ML into human workflows.
 
-- Led an interdisciplinary team building ML products, automating tasks performed by human investigators: scraping the web, classifying documents, designing ETLs - #tech[Clojure], #tech[PyTorch], #tech[Presto], #tech[Spark]
-- Architected systems to integrate ML inference with human-driven tasks - #tech[Clojure], #tech[Amazon SageMaker]
+// Returning to the startup world, I designed and built products, catering to the Insurance Industry, with a focus on integrating Machine Learning with Human tasks. Here my focus was on ML products instead of Data scale.
+
+#stack[Clojure][PyTorch][Presto][Spark][Amazon SageMaker][Airflow][AWS CloudFormation]
+
+- Led an interdisciplinary team building ML products, automating tasks performed by human investigators: scraping the web, classifying documents, designing ETLs
 - Automated hundreds of daily insurance claims investigations with the use of ML, reducing manual investigations by 70%
-- Designed and built ETL workflows for analytic databases - #tech[Airflow], #tech[Spark]
-- Built dashboards tracking performance of ML models against their human counterparts - #tech[Presto], #tech[Airflow]
-- Deployed and maintained infrastructure - #tech[AWS CloudFormation], #tech[Amazon SageMaker]
+- Architected systems to integrate ML inference with human-driven tasks
+- Designed and built ETL workflows for analytic databases
 - Mentored mid-level Engineers on Data Engineering
 
 #v(0.4em)
@@ -230,19 +221,16 @@ I led a highly technical team to create a vast, event-level data store, used as 
 The real-time system processes 1.2M+ records/second, and requires zero downtime. Consequently, I grew a team with high technical aptitude,
 and emphasized ownership as a core principle in Software Development. Acquired by Oracle.
 
+#stack[Kafka][Airflow][Parquet][Golang][Python][AWS][Protobuf][Postgres]
+
 ==== Engineering Manager, post-acquisition
 
 - Managed and grew team of 7 Data Engineers, ranging from College Recruit to Senior Engineer
 - Designed, built, and maintained infra end-to-end: web ingest, stream-processing, hourly ETL to Parquet
 - Built multiyear Software Roadmap with Engineering Managers and Product Owners
-- Designed and built the event-level data lake, unifying Research, Product, and Engineering datasets -
-  #tech[Kafka], #tech[Airflow], #tech[Parquet]
-- Processed and stored over 1.2M+ events/second in realtime -
-  #tech[Kafka], #tech[Golang], #tech[Python]
-- Migrated legacy core business logic to modern systems -
-  #tech[Kafka], #tech[Airflow]
-- Managed a team owning 1,000+ instances with a budget of \$340,000+ per month -
-  #tech[AWS]
+- Designed and built the event-level data lake, unifying Research, Product, and Engineering datasets
+- Processed and stored over 1.2M+ events/second in realtime
+- Managed a team owning 1,000+ instances with a budget of \$340,000+ per month
 - Collaborated with ML and Engineering to design a pipeline powering 5 distinct teams
 - Mentored and promoted every Software Engineer on my team
 // - Authored technical proposals for Data Privacy, System Architecture, and Wire Protocols
@@ -252,11 +240,11 @@ and emphasized ownership as a core principle in Software Development. Acquired b
 
 - Managed weekly software releases for core business logic, contributed to by 4 distinct teams
 // - Built multiyear roadmap for the data pipeline, and the systems that power it
-- Designed and built stream-processing applications processing 1.2M+ events/second - #tech[Golang], #tech[Python], #tech[Kafka]
-- Designed and built system-wide wire protocol - #tech[Protobuf]
-- Built custom software that reduced instance count by 50%, saving over \$2M dollars - #tech[Golang]
-- Built and maintained software end-to-end over 1,000+ AWS instances (c5.xl, r5.8xl)
-- Designed "cold storage" data schema - #tech[Parquet]
+- Designed and built stream-processing applications processing 1.2M+ events/second
+- Designed and built system-wide wire protocol
+- Built custom software that reduced instance count by 50%, saving over \$2M dollars
+// - Built and maintained software end-to-end over 1,000+ AWS instances (c5.xl, r5.8xl)
+- Designed "cold storage" data schema
 - Maintained historical databases, importing 800,000,000+ rows per day - Highly modified #tech[Postgres]
 
 //=== #job([Chartbeat], "Tech Lead, Data Engineering", "December 2014 - December 2016")
