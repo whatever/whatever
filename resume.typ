@@ -1,3 +1,10 @@
+#set document(
+  title: "RESUMÉ",
+  author: "Matt Owen",
+  keywords: ("manager", "hacker", "ai", "fine-tuning", "llm", "rag"),
+  date: datetime.today(),
+)
+
 #set page(
   paper: "us-letter",
   margin: (x: 0.75in, y: 0.75in),
@@ -110,7 +117,7 @@ of infrastructure, and celebrated the delivery of ambitious projects.
   [ *Engineering + Platform* ], [ #pad(left: 0.75em)[ #tech[Terraform], #tech[Kubernetes], #tech[MLOps], #tech[Airflow], #tech[Kafka], #tech[Celery], #tech[AWS], #tech[Spark], #tech[Golang], #tech[Python] ] ],
   [ *Achievements* ], [
     #set list(indent: 0em, body-indent: 0.4em)
-    - #link("https://github.com/Lazarus-AI/clearwing")[Building Clearwing], an agentic SOC and pentester
+    - #link("https://github.com/Lazarus-AI/clearwing")[Released Clearwing and AGEST Zero Shield], an agentic SOC and pentesting suite
     - #link("https://www.economist.com/briefing/2026/06/25/ai-models-values-are-very-different-from-most-peoples")[Curated data collection and evaluation of unaligned models] - covered in The Economist
     - #link("https://huggingface.co/pool-water/script-kiddie")[Fine-tuned Qwen3] for red-team use in 2025, before commodity cyber-specialized LLMs existed
     - #link(<sec-oracle>)[Built company-wide data pipeline and lake], unifying Research, Product, and Engineering
@@ -126,12 +133,12 @@ of infrastructure, and celebrated the delivery of ambitious projects.
 === #job([Lazarus AI <sec-lazarus>], "ML Engineering Manager", "October 2025 - Present")
 
 #link("https://www.lazarusaie.com/research")[Leading ML engineering and applied research] across a broad portfolio: Cybersecurity, Public-Sector, Insurance.
-Here, my work has been delivering bleeding-edge technology into effective, comprehensible products for a wide range of contracts.
+Here, my work has been delivering the latest AI technology into effective, comprehensible products for a wide range of contracts.
 
 #stack[LangGraph][RAG][OCR][RLM][vLLM][Dagster][Langfuse][Axolotl][LLaMa-Factory][Python][Terraform][Kubernetes][MLOps]
 
 - Managed 3 concurrent project lines: #link("https://github.com/Lazarus-AI/clearwing")[Clearwing] (Agentic SOC + Pentesting), #link("https://www.lazarusaie.com/platform")[AIE] (Document Extraction), ATLS (Public Sector)
-- Managed 4-person team, translating bleeding edge research into product tech stacks
+- Managed 4-person team, translating research into product tech stacks
 - Built model-agnostic Agentic Systems across 4 projects, replacing legacy document extraction
 - Extended document-parsing capability to 1,000+ pages at 1/10 per-page cost
 - Migrated clients from cloud-hosted SaaS solutions to sovereignly-owned, on-prem solutions
@@ -171,7 +178,6 @@ Contracted with several early-stage startups, building out AI products.
 ==== WorkMate Labs: Workmate is your AI teammate
 
 - Designed and built a Digital Assistant, automating task extraction and email drafting
-- Designed and deployed LLM Prompts for contextual, personal email drafting
 - Designed and deployed custom evaluation framework for measuring LLM performance
 - Designed retrieval system for context-aware search of similar sent emails
 
@@ -179,9 +185,7 @@ Contracted with several early-stage startups, building out AI products.
 
 - Fine-tuned Dolphin Mixtral to improve conversational style <sec-freelance-synthetic>
 - Designed and built question-answering workflows inspired by Graph-of-thoughts
-- Designed and built SMS-based chat interface to LLMs
 - Automated MLOps for LLM-based projects - finetuning, testing, deployment, and performance evaluation
-- Designed and deployed IaC for all services
 
 ==== Stealth Startup: Generative AI Customers as a service
 
@@ -210,7 +214,7 @@ Designed and built products for insurance tech, focusing on integrating ML into 
     columns: (30%, 1fr, auto),
     column-gutter: 1em,
     [_Sabbatical_],
-    [],
+    [#text(size: 0.7em, weight: "medium", style: "italic")[_Travel, Meditation, Muay Thai_]],
     [#text(size: 0.7em, weight: "medium", style: "italic")[#align(right)[October 2021 – January 2023]]],
   )]
 ]
@@ -223,29 +227,34 @@ and emphasized ownership as a core principle in Software Development. Acquired b
 
 #stack[Kafka][Airflow][Parquet][Golang][Python][AWS][Protobuf][Postgres]
 
-==== Engineering Manager, post-acquisition
+==== Engineering Manager
 
 - Managed and grew team of 7 Data Engineers, ranging from College Recruit to Senior Engineer
 - Designed, built, and maintained infra end-to-end: web ingest, stream-processing, hourly ETL to Parquet
 - Built multiyear Software Roadmap with Engineering Managers and Product Owners
 - Designed and built the event-level data lake, unifying Research, Product, and Engineering datasets
-- Processed and stored over 1.2M+ events/second in realtime
 - Managed a team owning 1,000+ instances with a budget of \$340,000+ per month
 - Collaborated with ML and Engineering to design a pipeline powering 5 distinct teams
 - Mentored and promoted every Software Engineer on my team
 // - Authored technical proposals for Data Privacy, System Architecture, and Wire Protocols
 
 
-==== Technical Lead, pre-acquisition <sec-oracle-engineer>
+==== Technical Lead <sec-oracle-engineer>
 
 - Managed weekly software releases for core business logic, contributed to by 4 distinct teams
 // - Built multiyear roadmap for the data pipeline, and the systems that power it
 - Designed and built stream-processing applications processing 1.2M+ events/second
 - Designed and built system-wide wire protocol
-- Built custom software that reduced instance count by 50%, saving over \$2M dollars
+- Built custom software that reduced instance count by 50%, saving over \$2M
 // - Built and maintained software end-to-end over 1,000+ AWS instances (c5.xl, r5.8xl)
-- Designed "cold storage" data schema
+// - Designed "cold storage" data schema
 - Maintained historical databases, importing 800,000,000+ rows per day - Highly modified #tech[Postgres]
+
+=== #job([Chartbeat <sec-chartbeat>], "Tech Lead, Data Engineering", "December 2014 - December 2016")
+
+- Led 8-person interdisciplinary team
+- Designed core data pipeline, processing 300,000+ events/second - #tech[Kafka], #tech[Clojure]
+- Designed and built the first version of the Chartbeat Historical product, ranking millions of articles - #tech[Postgres]
 
 //=== #job([Chartbeat], "Tech Lead, Data Engineering", "December 2014 - December 2016")
 //
@@ -287,6 +296,6 @@ and emphasized ownership as a core principle in Software Development. Acquired b
     column-gutter: 1em,
     [_Prior Research_],
     [#text(size: 0.7em, weight: "medium", style: "italic")[Harvard IQSS, NECSI]],
-    [#text(size: 0.7em, weight: "medium", style: "italic")[#align(right)[2005 – 2013]]],
+    [#text(size: 0.7em, weight: "medium", style: "italic")[#align(right)[2005 – 2014]]],
   )]
 ]
